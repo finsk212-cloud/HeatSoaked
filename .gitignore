@@ -1,0 +1,5 @@
+*.log
+heatsoak_log*.txt
+*.bak
+venv/
+__pycache__/
