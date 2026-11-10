@@ -1,0 +1,402 @@
+{
+  "defaults": {
+    "ui": {
+      "updateHz": 10,
+      "greenFrom": 0.5,
+      "greenTo": 0.85,
+      "limits": {
+        "coolant": {
+          "warn": 110,
+          "critical": 120
+        },
+        "oil": {
+          "warn": 130,
+          "critical": 150
+        },
+        "egt": {
+          "warn": 950,
+          "critical": 1000
+        },
+        "turbineHousing": {
+          "warn": 750,
+          "critical": 850
+        },
+        "compressorOut": {
+          "warn": 180,
+          "critical": 200
+        },
+        "iat": {
+          "warn": 60,
+          "critical": 75
+        },
+        "icCore": {
+          "warn": 70,
+          "critical": 85
+        },
+        "engineBayAir": {
+          "warn": 90,
+          "critical": 110
+        },
+        "gearboxOil": {
+          "warn": 120,
+          "critical": 140
+        },
+        "diffOil": {
+          "warn": 120,
+          "critical": 140
+        },
+        "cylinderHead": {
+          "warn": 150,
+          "critical": 175
+        },
+        "rodBearings": {
+          "warn": 135,
+          "critical": 155
+        },
+        "catalyst": {
+          "warn": 850,
+          "critical": 950
+        },
+        "ringDamage": {
+          "warn": 25,
+          "critical": 100
+        },
+        "gasketDamage": {
+          "warn": 25,
+          "critical": 100
+        },
+        "rodDamage": {
+          "warn": 25,
+          "critical": 100
+        },
+        "turboDamage": {
+          "warn": 25,
+          "critical": 100
+        },
+        "boostCut": {
+          "warn": 25,
+          "critical": 100
+        },
+        "catalystDamage": {
+          "warn": 25,
+          "critical": 100
+        },
+        "gearboxDamage": {
+          "warn": 25,
+          "critical": 100
+        },
+        "diffDamage": {
+          "warn": 25,
+          "critical": 100
+        }
+      }
+    },
+    "turboDamage": {
+      "vanillaThresholdDefault": 1000,
+      "heat": {
+        "enabled": false,
+        "warn": 650,
+        "crit": 750,
+        "maxFactor": 2,
+        "perSecondDivisor": 60
+      },
+      "coking": {
+        "temperature": 500,
+        "range": 150,
+        "maxFactor": 1,
+        "perSecondDivisor": 300
+      },
+      "oil": {
+        "warn": 130,
+        "range": 20,
+        "maxFactor": 2,
+        "perSecondDivisor": 900,
+        "lubricationDivisor": 30,
+        "lubricationHoldSeconds": 3
+      }
+    },
+    "turboBoostCut": {
+      "points": [
+        [
+          0.2,
+          0
+        ],
+        [
+          0.6,
+          0.3
+        ],
+        [
+          1.0,
+          1.0
+        ]
+      ],
+      "smoothSeconds": 2,
+      "referenceSettleSeconds": 1.0,
+      "minStepPsi": 0.25,
+      "baselineCheckSeconds": 0.5,
+      "repairIntegrityRise": 0.02
+    },
+    "catalystDamage": {
+      "startTemp": 900,
+      "fullRateTemp": 1100,
+      "perSecondDivisor": 120,
+      "maxFactor": 1,
+      "contamination": {
+        "enabled": true,
+        "perSecondDivisor": 900
+      }
+    },
+    "catalystLoss": {
+      "points": [
+        [
+          0.1,
+          0.0
+        ],
+        [
+          1.0,
+          0.5
+        ]
+      ],
+      "smoothSeconds": 2,
+      "maxLoss": 0.5
+    },
+    "drivetrainDamage": {
+      "gearbox": {
+        "startTemp": 140,
+        "fullRateTemp": 160,
+        "perSecondDivisor": 120,
+        "maxFrictionCoef": 2.5,
+        "synchroWearRate": 0.005
+      },
+      "differential": {
+        "startTemp": 140,
+        "fullRateTemp": 160,
+        "perSecondDivisor": 120,
+        "maxFrictionCoef": 1.5
+      }
+    },
+    "damage": {
+      "wallWarnMargin": 10,
+      "blockWarnMargin": 10,
+      "defaults": {
+        "blockTemperature": 140,
+        "oilTemperature": 150,
+        "wallTemperature": 160,
+        "pistonRing": 2000000,
+        "headGasket": 2000000,
+        "connectingRod": 2000000
+      }
+    },
+    "cylinderHead": {
+      "mass": 20,
+      "specificHeat": 900,
+      "combustionFraction": 0.13,
+      "gWall": 100,
+      "gCoolant": 900
+    },
+    "rodBearings": {
+      "mass": 2,
+      "specificHeat": 460,
+      "frictionFraction": 0.27,
+      "starvationGain": 4,
+      "gOil": 100
+    },
+    "catalyst": {
+      "mass": 4,
+      "specificHeat": 750,
+      "linkBase": 10,
+      "linkPerPower": 62,
+      "gAirBase": 5.5,
+      "gAirPerSpeed": 0.1
+    },
+    "gearboxOil": {
+      "efficiency": {
+        "manualGearbox": 0.97,
+        "sequentialGearbox": 0.97,
+        "dctGearbox": 0.96,
+        "automaticGearbox": 0.96,
+        "cvtGearbox": 0.93
+      },
+      "mass": 8.0,
+      "specificHeat": 2000,
+      "gAirBase": 29.0909,
+      "gAirPerSpeed": 2.61818,
+      "gBay": 29.0909
+    },
+    "diffOil": {
+      "efficiency": 0.97,
+      "mass": 6.25,
+      "specificHeat": 2000,
+      "gAirBase": 21.5517,
+      "gAirPerSpeed": 1.72414,
+      "gBay": 14.3678
+    },
+    "engineOffRpm": 300,
+    "rpmMax": 20000,
+    "egt": {
+      "base": 320,
+      "k": 560,
+      "exponent": 1.4,
+      "tau": 1,
+      "fuelCutTemp": 250,
+      "fuelCutRpm": 1500,
+      "engineOffTau": 30
+    },
+    "turbineHousing": {
+      "mass": 14.6,
+      "specificHeat": 500,
+      "linkBase": 1.3,
+      "linkPerPower": 292,
+      "airBase": 29.7,
+      "airRunning": 37,
+      "airPerSpeed": 0.22,
+      "radiation": 0
+    },
+    "compressor": {
+      "efficiency": 0.7,
+      "exponent": 0.286,
+      "baroKpa": 101.3,
+      "kpaPerPsi": 6.895
+    },
+    "intercooler": {
+      "eStandstill": 0.55,
+      "eAtRefSpeed": 0.8,
+      "refSpeed": 27.78,
+      "epsIdle": 0.95,
+      "epsFull": 0.75,
+      "mass": 4,
+      "specificHeat": 900,
+      "gCharge": 30,
+      "boostRefPsi": 12.5,
+      "gBay": 100,
+      "gAirAtRefSpeed": 93
+    },
+    "engineBayAir": {
+      "mass": 5,
+      "specificHeat": 1005,
+      "gBlock": 30,
+      "gExhaust": 5,
+      "gAmbientBase": 25,
+      "gAmbientPerSpeed": 2.2
+    },
+    "tires": {
+      "surfaceThickness": 0.0015,
+      "treadThickness": 0.009,
+      "rubberDensity": 1150,
+      "treadSpecificHeat": 1800,
+      "carcassSpecificHeat": 1600,
+      "cavityAirSpecificHeat": 1005,
+      "abrasionCapacityPerKg": 32000000,
+      "asphaltFrictionPartition": 0.45,
+      "conductionTreadToCarcass": 22.0,
+      "conductionCarcassToAir": 8.0,
+      "convectionAirBase": 14.0,
+      "convectionAirPerSpeed": 1.8,
+      "conductionRoadBase": 28.0,
+      "flexingCoeff": 0.006,
+      "conductionBrakeToWheel": 0.2,
+      "optimumTempMin": 75,
+      "optimumTempMax": 100,
+      "warnTemp": 115,
+      "criticalTemp": 135,
+      "coldGripMin": 0.85,
+      "overheatGrip": 0.8,
+      "blisterGrip": 0.65,
+      "maxWearGripLoss": 0.25,
+      "enableGripEffects": true,
+      "enablePressurePhysics": true,
+      "enableBlowout": true,
+      "blowoutTempThreshold": 155.0,
+      "blowoutWearThreshold": 100.0,
+      "maxBurstPressurePsi": 65.0,
+      "compounds": {
+        "standard": {
+          "name": "Standard",
+          "surfaceThickness": 0.0016,
+          "treadThickness": 0.009,
+          "heatGainMult": 1.0,
+          "abrasionCapacityMult": 1.0,
+          "optimumTempMin": 70,
+          "optimumTempMax": 95,
+          "warnTemp": 110,
+          "criticalTemp": 130,
+          "coldGripMin": 0.88
+        },
+        "sport": {
+          "name": "Sport",
+          "surfaceThickness": 0.0014,
+          "treadThickness": 0.0075,
+          "heatGainMult": 1.2,
+          "abrasionCapacityMult": 0.6,
+          "optimumTempMin": 75,
+          "optimumTempMax": 100,
+          "warnTemp": 115,
+          "criticalTemp": 135,
+          "coldGripMin": 0.84
+        },
+        "race": {
+          "name": "Race",
+          "surfaceThickness": 0.0012,
+          "treadThickness": 0.0055,
+          "heatGainMult": 1.5,
+          "abrasionCapacityMult": 0.28,
+          "optimumTempMin": 85,
+          "optimumTempMax": 110,
+          "warnTemp": 125,
+          "criticalTemp": 145,
+          "coldGripMin": 0.78
+        },
+        "drag": {
+          "name": "Drag",
+          "surfaceThickness": 0.001,
+          "treadThickness": 0.005,
+          "heatGainMult": 1.65,
+          "abrasionCapacityMult": 0.2,
+          "optimumTempMin": 90,
+          "optimumTempMax": 120,
+          "warnTemp": 135,
+          "criticalTemp": 155,
+          "coldGripMin": 0.7
+        },
+        "rally": {
+          "name": "Rally",
+          "surfaceThickness": 0.0018,
+          "treadThickness": 0.01,
+          "heatGainMult": 1.05,
+          "abrasionCapacityMult": 0.75,
+          "optimumTempMin": 70,
+          "optimumTempMax": 95,
+          "warnTemp": 115,
+          "criticalTemp": 135,
+          "coldGripMin": 0.86
+        },
+        "offroad": {
+          "name": "Off-Road",
+          "surfaceThickness": 0.0022,
+          "treadThickness": 0.012,
+          "heatGainMult": 0.85,
+          "abrasionCapacityMult": 1.3,
+          "optimumTempMin": 65,
+          "optimumTempMax": 90,
+          "warnTemp": 110,
+          "criticalTemp": 130,
+          "coldGripMin": 0.9
+        }
+      }
+    },
+    "coldEngine": {
+      "enabled": true,
+      "safeRpm": 3500,
+      "safeRpmDiesel": 2500,
+      "safeOilTemp": 65,
+      "oilWarmupRate": 0.55
+    }
+  },
+  "engines": {
+    "sunburst2": {
+      "damage": {
+        "blockTemperatureOverride": 120
+      }
+    }
+  }
+}

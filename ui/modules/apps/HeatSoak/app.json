@@ -1,0 +1,22 @@
+{
+  "domElement": "<heat-soak></heat-soak>",
+  "name": "HeatSoak",
+  "types": [
+    "ui.apps.categories.telemetry"
+  ],
+  "description": "Visual chassis tire telemetry and powertrain thermal monitoring",
+  "css": {
+    "left": "0px",
+    "height": "520px",
+    "width": "350px",
+    "min-width": "280px",
+    "min-height": "120px",
+    "top": "0px"
+  },
+  "author": "heatsoak",
+  "version": "1.0",
+  "directive": "heatSoak",
+  "category": "Telemetry",
+  "isAuxiliary": false,
+  "interactive": "yes"
+}
